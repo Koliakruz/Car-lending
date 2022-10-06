@@ -1,0 +1,456 @@
+// variables
+$colorforhead_foot: #332208;
+$white: #FEFEFE;
+$dark: #1B1818;
+$accent_color: #C5AC2D;
+
+html{
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before{
+  box-sizing: inherit;
+}
+
+a{
+  text-decoration: none;
+  color: $white;
+}
+
+ul,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: $dark;
+  margin: 0;
+}
+
+.header{
+  background-color: $colorforhead_foot;
+  margin-bottom: 50px;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+}
+
+.container{
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.menu{
+  &__list{
+    display: flex;
+    &-link{
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      margin: 0 20px;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      border-bottom: transparent;
+      transition: all .5s;
+      &:hover{
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+  &__btn{
+    display: none;
+  }
+}
+
+.phone{
+  font-size: 18px;
+  line-height: 21px;
+}
+
+//Стилізація кнопок сторінки
+.app__btn{
+  color: $white;
+  padding: 15px 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: $accent_color;
+  border: 1px solid transparent;
+  transition: all .5s;
+  &:hover{
+    border: 1px solid $accent_color;
+    color: $accent_color;
+    background-color: $white;
+  }
+  &-popup{
+    text-transform: uppercase;
+    background-color: $accent_color;
+    padding: 6px 34px 6px 64px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    border: transparent;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-image: url(../images/play-btn.svg);
+      top: 12px;
+      left: 34px;
+    }
+  }
+}
+
+//Верхня секція
+.top{
+  &__heading{
+    display: flex;
+  }
+  &__content{
+    text-align: center;
+    max-width: 460px;
+    margin: 0 auto;
+    width: 50%;
+  }
+  &__title{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__text{
+    max-width: 470px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  &__slider{
+    width: 50%;
+    text-align: center;
+    &-text span{
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 500;
+      padding: 0 15px;
+    }
+    &-image{
+      max-height: 400px;
+    }
+  }
+    // Нижня частина верхньої секції 
+    &__bottom{
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      &-items{
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        margin: 0 auto;
+      }
+      &-item{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        width: 150px;
+        height: 150px;
+        border: 1px solid $dark;
+        transition: all .5s;
+        &:hover{
+          transform: scale(1.25);
+        }
+      }
+      &-link {
+        color: $dark;
+      }
+      &-link + &-link{
+        padding-left: 50px;
+      }
+      &-links{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+.top__slider .slick-dots{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+
+.slick-dots button{
+  font-size: 0;
+  border: none;
+  outline: none;
+  width: 10px;
+  height: 10px;
+  background-color: $dark;
+  padding: 0px;
+  border-radius: 50%;
+}
+
+.slick-active button{
+  width: 18px;
+  height: 18px;
+}
+
+
+//Друга секція - умови оренди
+.rent{
+  padding: 100px 0px;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info{
+    max-width: 300px;
+    &-title{
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 30px;
+    }
+    &-text{
+      margin-bottom: 20px;
+    }
+    &-text + &-text{
+      margin-bottom: 60px;
+    }
+  }
+  &__item{
+    text-align: center;
+    width: 250px;
+    min-height: 350px;
+    border: 1px solid $dark;
+    padding: 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-inner{
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      width: 100%;
+    }
+    &-number{
+      font-family: 'Fira Sans', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 96px;
+      line-height: 115px;
+      text-align: center;
+      opacity: 0.1;
+    }
+    &-title{
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: auto;
+    }
+
+  }
+} 
+
+//Третя секція - переваги
+.benefits{
+  &__img{
+    max-width: 600px;
+  }
+  &__title{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 10px;
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  &__text + &__text{
+    width: 255px;
+    margin-left: auto;
+  }
+  &__list{
+    width: 600px;
+    &-item{
+      margin-bottom: 26px;
+      padding-right: 27px;
+      position: relative;
+      text-align: right;
+      &::after{
+        content: '';
+        width: 16px;
+        height: 16px;
+        background-color: $dark;
+        border-radius: 50%;
+        position: absolute;
+        top: 3px;
+        right: 0;
+      }
+      &:nth-child(1), &:nth-child(7){
+        margin-right: 10px;
+      }
+      &:nth-child(2), &:nth-child(6){
+        margin-right: 60px;
+      }
+      &:nth-child(3), &:nth-child(5){
+        margin-right: 110px;
+      }
+      &:nth-child(4){
+        margin-right: 160px;
+      }
+    }
+  }
+
+  &__content{
+    width: 300px;
+    text-align: right;
+  }
+}
+
+//четверта секція - відгуки
+.reviews {
+  padding: 100px 0;
+  background-color: $colorforhead_foot;
+  &__title{
+    color: $white;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 70px;
+  }
+  &__items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__item{
+    margin: 0 auto;
+    color: $white;
+    text-align: center;
+    width: 270px;
+    min-height: 300px;
+    border: 1px solid $accent_color;
+    padding: 45px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-title{
+      margin-bottom: 45px;
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+}
+
+.reviews__inner .slick-dots{
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  &.slick-dots button{
+      font-size: 0;
+      border: none;
+      outline: none;
+      width: 10px;
+      height: 10px;
+      background-color: $accent_color;
+      padding: 0px;
+      border-radius: 50%;
+      margin: 0 10px;
+  }
+  .slick-active button{
+    width: 18px;
+    height: 18px;
+  }
+}
+
+//П'ята секція - контактна форма
+.feedback{
+  padding: 100px 0;
+  &__inner{
+    display: flex;
+    align-items: center;
+  }
+  &__form{
+    width: 415px;
+    margin: 0 auto;
+    &-title{
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 5px;
+    }
+    &-text{
+      margin-bottom: 50px;
+    }
+    &-input{
+      font-size: 16px;
+      line-height: 19px;
+      display: block;
+      width: 100%;
+      height: 50px;
+      padding: 20px 10px;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      &::placeholder{
+        color: $dark;
+      }
+      &+input{
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+//Футер
+.footer{
+  padding: 75px 0 25px;
+  background-color: $colorforhead_foot;
+  height: 200px;
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  &__sotial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-link{
+      margin: 0 15px;
+    }
+  }
+}
